@@ -114,8 +114,8 @@ const VerticalCardScroll = () => {
         "Created efficient path planning algorithm"
       ],
       links: {
-        github: "https://github.com/yourusername/vanguard-robot",
-        video: "https://youtube.com/demo2"
+        github: "https://github.com/Rajas2912/Vanguard.git",
+        video: "https://drive.google.com/file/d/19j7cWe1ZemrYmOD2bDexGR0BdCvMuwTC/view?usp=sharing"
       }
     }
   ];
