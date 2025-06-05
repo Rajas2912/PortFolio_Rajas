@@ -177,8 +177,8 @@ const HackathonSection = () => {
         "Top 60 Finalist",
         "Selected for Round 2 (Offline)",
       ],
-      devpostLink: "#",
-      videoLink: "https://www.youtube.com/watch?v=rGlZOLS08yA",
+      devpostLink: "https://github.com/Rajas2912/Team_Kaizen_HackXplore.git",
+      videoLink: "https://youtu.be/JsFyMt7VpSc",
     },
     {
       title: "HackXplore 2025",
@@ -203,8 +203,8 @@ const HackathonSection = () => {
         "Top 10 Finalist",
         "Ranked 6th in Round 1",
       ],
-      devpostLink: "#",
-      videoLink: "https://www.youtube.com/watch?v=rGlZOLS08yA",
+      devpostLink: "https://github.com/Rajas2912/Team_Kaizen_HackXplore.git",
+      videoLink: "https://youtu.be/JsFyMt7VpSc",
     },
   ];
 

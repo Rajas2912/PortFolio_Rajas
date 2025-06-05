@@ -5,22 +5,34 @@ import { FaTrophy } from "react-icons/fa";
 import { useTheme } from "../../context/ThemeContext";
 import "./VerticalCard.css";
 
-const VerticalCard = ({ title, description, approach, tech, achievements, image, url, color, i, progress, targetScale }) => {
+const VerticalCard = ({
+  title,
+  description,
+  approach,
+  tech,
+  achievements,
+  image,
+  url,
+  color,
+  i,
+  progress,
+  targetScale,
+}) => {
   const { isDarkMode } = useTheme();
 
   return (
-    <div className={`card-container ${isDarkMode ? 'dark' : ''}`}>
+    <div className={`card-container ${isDarkMode ? "dark" : ""}`}>
       <motion.div
         className="card"
-        style={{ 
+        style={{
           backgroundColor: color,
           scale: targetScale,
-          top: `calc(-5vh + ${i * 25}px)`
+          top: `calc(-5vh + ${i * 25}px)`,
         }}
       >
         {/* Left Side - Project Image and Tech Stack */}
         <div className="image-section">
-          <motion.div 
+          <motion.div
             className="image-wrapper"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -28,20 +40,20 @@ const VerticalCard = ({ title, description, approach, tech, achievements, image,
           >
             <img src={image} alt={title} className="project-image" />
           </motion.div>
-          
+
           {/* Tech Stack Below Image */}
           <div className="tech-stack-section">
             <h3>Tech Stack</h3>
             <div className="tech-icons">
               {tech.map((item, index) => (
-                 <div key={index} className="tech-item">
-    <img 
-      src={item.icon}  // Use the imported SVG directly
-      alt={item.name} 
-      className="tech-icon"
-    />
-    <span className="tech-name">{item.name}</span>
-  </div>
+                <div key={index} className="tech-item">
+                  <img
+                    src={item.icon} // Use the imported SVG directly
+                    alt={item.name}
+                    className="tech-icon"
+                  />
+                  <span className="tech-name">{item.name}</span>
+                </div>
               ))}
             </div>
           </div>

@@ -64,8 +64,8 @@ const VerticalCardScroll = () => {
         "Optimized performance and accessibility"
       ],
       links: {
-        github: "https://github.com/yourusername/portfolio",
-        video: "https://youtube.com/portfolio-demo"
+        github: "https://github.com/Rajas2912/PortFolio_Rajas.git",
+        video: "https://youtube.com"
       }
     },
     {
@@ -89,8 +89,8 @@ const VerticalCardScroll = () => {
         "Developed PDF-based quiz generation"
       ],
       links: {
-        github: "https://github.com/yourusername/lms-ai",
-        video: "https://youtube.com/demo1"
+        github: "https://github.com/Rajas2912/Team_Kaizen_HackXplore.git",
+        video: "https://youtu.be/JsFyMt7VpSc"
       }
     },
     {
