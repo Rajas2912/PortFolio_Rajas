@@ -1,0 +1,480 @@
+.hackathon-section {
+  padding: 2rem 0;
+  background: #ebebeb;
+  transition: background-color 0.3s ease;
+}
+
+.hackathon-title{
+    text-align: center;
+    font-family: 'Montserrat';
+    font-weight: 400;
+    margin-top: 2rem;
+}
+
+
+.dark .hackathon-section {
+  background: #111111;
+}
+
+.hackathon-container {
+  max-width: 2000px;
+  margin: 0 auto;
+  padding: 0 0.3rem;
+}
+
+.hackathon-scroll {
+  background: #ebebeb;
+  height: 600vh;
+  transition: background-color 0.3s ease;
+}
+
+.dark .hackathon-scroll {
+  background: #111111;
+}
+
+.content-container {
+  height: 110vh;
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+  padding: 2rem 2rem;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  grid-gap: 8vw;
+  padding: 0 10vw;
+}
+
+.hackathon-item {
+  width: clamp(1000px, 80vw, 1400px);
+}
+
+.hackathon-card {
+  background: rgb(255, 255, 255);
+  border-radius: 24px;
+  padding: 3rem;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  display: flex;
+  height: auto;
+  min-height: 800px;
+  margin: 2rem;
+  overflow: hidden;
+  max-width: 1800px;
+  width: 100%;
+  gap: 3rem;
+  align-items: stretch;
+  transition: all 0.3s ease;
+}
+
+.dark .hackathon-card {
+  background: rgb(23, 23, 23);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+.card-top {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.card-content {
+  flex: 1.2;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 55%;
+}
+
+.right-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-left: 2rem;
+  max-width: 45%;
+}
+
+.card-image {
+  position: relative;
+  overflow: hidden;
+  height: 500px;
+  border-radius: 16px;
+  background: rgba(0, 0, 0, 0.02);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.dark .card-image {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: #f8f8f8;
+  transition: transform 0.3s ease;
+}
+
+.dark .card-image img {
+  background: #1a1a1a;
+}
+
+.card-image:hover img {
+  transform: scale(1.02);
+}
+
+.card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.card-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.2;
+  transition: color 0.3s ease;
+}
+
+.dark .card-title {
+  color: #ffffff;
+}
+
+.position-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.8rem 1.5rem;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  width: fit-content;
+  transition: background-color 0.3s ease;
+}
+
+.dark .position-badge {
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+}
+
+.info-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  flex: 1;
+}
+
+.info-section {
+  background: rgba(0, 0, 0, 0.02);
+  padding: 1.5rem;
+  border-radius: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.dark .info-section {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.info-section h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 0.8rem;
+  font-family: 'Montserrat', sans-serif;
+  transition: color 0.3s ease;
+}
+
+.dark .info-section h4 {
+  color: #ffffff;
+}
+
+.info-section p {
+  font-size: 1.1rem;
+  color: #2d3748;
+  line-height: 1.6;
+  transition: color 0.3s ease;
+}
+
+.dark .info-section p {
+  color: #a0aec0;
+}
+
+.tech-stack {
+  background: rgba(0, 0, 0, 0.02);
+  padding: 1.5rem;
+  border-radius: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.dark .tech-stack {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.tech-stack h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+  font-family: 'Montserrat', sans-serif;
+  transition: color 0.3s ease;
+}
+
+.dark .tech-stack h4 {
+  color: #ffffff;
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.tech-tag {
+  padding: 0.6rem 1.2rem;
+  background: white;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #2d3748;
+  transition: all 0.3s ease;
+}
+
+.dark .tech-tag {
+  background: #2d3748;
+  color: #e2e8f0;
+}
+
+.devpost-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  background: #0f0f0f;
+  color: white;
+  border-radius: 16px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  justify-content: center;
+  transition: all 0.2s ease;
+  margin-top: auto;
+  width: fit-content;
+}
+.video-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  background: #0f0f0f;
+  color: white;
+  border-radius: 16px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  justify-content: center;
+  transition: all 0.2s ease;
+  margin-top: auto;
+  width: fit-content;
+}
+
+
+.dark .devpost-link {
+  background: #2d3748;
+}
+
+.devpost-link:hover {
+  background: #2d3748;
+  transform: translateY(-2px);
+}
+
+.dark .devpost-link:hover {
+  background: #4a5568;
+}
+
+/* Custom color for bronze medal */
+.text-bronze-400 {
+  color: #cd7f32;
+}
+
+/* Responsive Design */
+@media (max-width: 1400px) {
+  .hackathon-item {
+    width: clamp(900px, 75vw, 1200px);
+  }
+
+  .hackathon-card {
+    height: 550px;
+  }
+
+  .card-title {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hackathon-item {
+    width: clamp(800px, 85vw, 1000px);
+  }
+
+  .hackathon-card {
+    height: 500px;
+  }
+
+  .card-content {
+    padding: 2rem;
+  }
+
+  .card-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hackathon-card {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .card-content,
+  .card-image {
+    max-width: 100%;
+  }
+
+  .card-image {
+    height: 300px;
+  }
+
+  .card-title {
+    font-size: 1.8rem;
+  }
+}
+
+.achievements-section {
+  flex: 1;
+  padding: 1.5rem;
+  background: rgba(0, 0, 0, 0.02);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.3s ease;
+}
+
+.dark .achievements-section {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.achievements-section h4 {
+  color: #1a1a1a;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  font-family: 'Montserrat', sans-serif;
+  transition: color 0.3s ease;
+}
+
+.dark .achievements-section h4 {
+  color: #ffffff;
+}
+
+.achievements-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  list-style: none;
+  padding: 0;
+}
+
+.achievement-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #2d3748;
+  font-size: 0.95rem;
+  background: white;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.dark .achievement-item {
+  background: #2d3748;
+  color: #e2e8f0;
+}
+
+.achievement-icon {
+  color: #fbbf24;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+} 
+
+/* 
+added two buttons video and project  */
+
+/* Button Group Styles */
+.button-group {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.project-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  flex: 1;
+  justify-content: center;
+}
+
+.button-icon {
+  font-size: 1.2rem;
+}
+
+.github-button {
+  background-color: #333;
+  color: white;
+}
+
+.github-button:hover {
+  background-color: #444;
+  transform: translateY(-2px);
+}
+
+.video-button {
+  background-color: #333;
+  color: white;
+}
+
+.video-button:hover {
+  background-color: #444;
+  transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .button-group {
+    flex-direction: column;
+  }
+  
+  .project-button {
+    width: 100%;
+  }
+}

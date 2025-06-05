@@ -1,0 +1,283 @@
+.vertical-cards-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card-carousel {
+  width: 100%;
+  margin: 1rem auto;
+  transition: transform 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .vertical-cards-container {
+    padding: 1rem;
+  }
+  
+  .card-carousel {
+    width: 95%;
+  }
+}
+
+.projects-main {
+  position: relative;
+  height: 400vh;
+  background: #f5f5f5;
+}
+
+.card-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  padding: 2rem;
+}
+
+.card {
+  display: flex;
+  position: relative;
+  height: 700px;
+  width: 1300px;
+  border-radius: 30px;
+  transform-origin: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  will-change: transform;
+  overflow: hidden;
+  background: white;
+}
+
+/* Image Section */
+.image-section {
+  width: 45%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.image-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Content Section */
+.content-section {
+  width: 55%;
+  height: 100%;
+  padding: 3.5rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.content-section::-webkit-scrollbar {
+  width: 6px;
+}
+
+.content-section::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 3px;
+}
+
+.content-section::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+}
+
+/* Project Header */
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.project-title {
+  font-size: 2.75rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.project-links {
+  display: flex;
+  gap: 1.25rem;
+  padding-top: 0.5rem;
+}
+
+.link-item {
+  color: #4a5568;
+  transition: all 0.3s ease;
+  font-size: 1.75rem;
+}
+
+.link-item:hover {
+  color: #2d3748;
+  transform: translateY(-2px);
+}
+
+/* Project Sections */
+.project-description p,
+.project-approach p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #4a5568;
+  margin: 0;
+}
+
+.project-approach h3,
+.project-achievements h3,
+.tech-stack h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+}
+
+/* Achievements */
+.project-achievements ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.project-achievements li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.1rem;
+  color: #4a5568;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.achievement-icon {
+  color: #eab308;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+/* Tech Stack */
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.tech-tag {
+  padding: 0.6rem 1.2rem;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 20px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #4a5568;
+  transition: all 0.3s ease;
+}
+
+.tech-tag:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 1400px) {
+  .card {
+    width: 95%;
+    height: 650px;
+  }
+
+  .content-section {
+    padding: 2.5rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .card {
+    flex-direction: column;
+    height: auto;
+    max-height: 85vh;
+  }
+
+  .image-section {
+    width: 100%;
+    height: 300px;
+  }
+
+  .content-section {
+    width: 100%;
+    max-height: calc(85vh - 300px);
+    padding: 2rem;
+  }
+
+  .project-title {
+    font-size: 2.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .card-container {
+    padding: 1rem;
+  }
+
+  .content-section {
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .project-title {
+    font-size: 2rem;
+  }
+
+  .project-description p,
+  .project-approach p,
+  .project-achievements li {
+    font-size: 1rem;
+  }
+
+  .tech-tag {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .image-section {
+    height: 250px;
+  }
+
+  .project-header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .project-links {
+    width: 100%;
+    justify-content: flex-start;
+    padding-top: 0;
+  }
+
+  .project-title {
+    font-size: 1.75rem;
+  }
+} 

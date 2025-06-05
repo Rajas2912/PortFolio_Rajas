@@ -1,0 +1,35 @@
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+.section {
+  padding: 4rem 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ensure sections take full viewport height minus navbar height */
+#home {
+  min-height: calc(100vh - 80px);
+  padding-top: 0;
+}
+
+/* Dark mode support */
+.dark .section {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 3rem 0;
+  }
+} 

@@ -1,0 +1,37 @@
+.textmarqueecontainer {
+  width: 100%;
+  background: #000000;
+  padding: 1rem 0;
+}
+
+.textmarqueecontent {
+  display: flex;
+  position: relative;
+  width: fit-content;
+  white-space: nowrap;
+  gap: 1.6rem;
+}
+
+.textmarqueecontent span {
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  text-transform: uppercase;
+  font-family: "Montserrat-Regular", sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+/* For the cards marquee above */
+.flex.gap-12.px-4 {
+  padding: 1rem 0;
+}
+
+/* Add some spacing between the two marquees */
+.textmarqueecontainer {
+  margin-top: 1rem;
+}
+
+/* Rest of existing styles... */ 

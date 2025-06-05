@@ -1,0 +1,55 @@
+.text {
+  font-weight: 500;
+  letter-spacing: 1.7px;
+  text-transform: uppercase;
+  font-family: "Kanit", sans-serif;
+  font-size: 17px;
+  fill: #111;
+}
+
+#rotatingText {
+  animation-name: rotate-circle;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rotate-circle {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+.main {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  position: relative;
+  width: 300px;
+  height: 200px;
+}
+
+.center-icon {
+  position: absolute;
+  z-index: 1;
+  padding: 10px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.center-icon:hover {
+  transform: scale(1.2) rotate(15deg);
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.main svg {
+  position: relative;
+} 

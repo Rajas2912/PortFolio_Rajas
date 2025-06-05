@@ -1,0 +1,213 @@
+.experience-section {
+  padding: 4rem 0;
+  background: #ebebeb;
+  min-height: 100vh;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+.dark .experience-section {
+  background: #111111;
+}
+
+.experience-title {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.experience-title h1 {
+  font-family: "Montserrat-Regular", sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #000000;
+  letter-spacing: 0.1em;
+  transition: color 0.3s ease;
+}
+
+.dark .experience-title h1 {
+  color: #ffffff;
+}
+
+.timeline-container {
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+}
+
+/* Timeline line */
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+  background: #000000;
+  transition: background-color 0.3s ease;
+}
+
+.dark .timeline-container::before {
+  background: #ffffff;
+}
+
+.timeline-card {
+  width: 100%;
+  margin-bottom: 4rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+/* Timeline marker */
+.timeline-marker {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  background: #000000;
+  border-radius: 50%;
+  z-index: 2;
+  transition: background-color 0.3s ease;
+}
+
+.dark .timeline-marker {
+  background: #ffffff;
+}
+
+.card-content {
+  width: 45%;
+  background: rgb(255, 255, 255);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.dark .card-content {
+  background: #1a1a1a;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Alternate cards left and right */
+.timeline-card:nth-child(odd) .card-content {
+  margin-right: 55%;
+}
+
+.timeline-card:nth-child(even) .card-content {
+  margin-left: 55%;
+}
+
+.company-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+
+  font-family: "Montserrat-Regular", sans-serif;
+  font: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.company-logo {
+  width: 120px;
+  height: 60px;
+  object-fit: contain;
+  transition: filter 0.3s ease;
+}
+
+.dark .company-logo {
+  filter: brightness(0.8);
+}
+
+.company-info h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.dark .company-info h2 {
+  color: #ffffff;
+}
+
+.company-info h3 {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #4a5568;
+  margin-bottom: 0.25rem;
+  transition: color 0.3s ease;
+}
+
+.dark .company-info h3 {
+  color: #a0aec0;
+}
+
+.period {
+  font-size: 1.2rem;
+  color: #718096;
+  transition: color 0.3s ease;
+}
+
+.dark .period {
+  color: #a0aec0;
+}
+
+.responsibilities {
+  list-style-type: none;
+  font-size: 1.2rem;
+  padding: 0;
+}
+
+.responsibilities li {
+  position: relative;
+  font: 0.8rem;
+  padding-left: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: #4a5568;
+  line-height: 1.6;
+  transition: color 0.3s ease;
+}
+
+.dark .responsibilities li {
+  color: #a0aec0;
+}
+
+.responsibilities li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #000000;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.dark .responsibilities li::before {
+  color: #ffffff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .timeline-container::before {
+    left: 0;
+  }
+
+  .timeline-marker {
+    left: 0;
+  }
+
+  .card-content {
+    width: 85%;
+  }
+
+  .timeline-card:nth-child(odd) .card-content,
+  .timeline-card:nth-child(even) .card-content {
+    margin-left: 2rem;
+    margin-right: 0;
+  }
+
+  .experience-title h1 {
+    font-size: 2.5rem;
+  }
+} 

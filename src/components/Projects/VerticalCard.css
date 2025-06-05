@@ -1,0 +1,369 @@
+.projects-title {
+  text-align: center;
+  padding: 2rem 0;
+  background: #ebebeb;
+  transition: background-color 0.3s ease;
+}
+
+.dark .projects-title {
+  background: #111111;
+}
+
+.projects-title h1 {
+  font-family: "Montserrat-Regular", sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #000000;
+  letter-spacing: 0.1em;
+  transition: color 0.3s ease;
+}
+
+.dark .projects-title h1 {
+  color: #ffffff;
+}
+
+.card-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  padding: 2rem;
+}
+
+.card {
+  display: flex;
+  position: relative;
+  width: 2000px;
+  height: 950px;
+  border-radius: 24px;
+  overflow: hidden;
+  background: rgb(255, 255, 255);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dark .card {
+  background: #1a1a1a;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Image Section with Tech Stack */
+.image-section {
+  width: 45%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: #000;
+}
+
+.image-wrapper {
+  width: 100%;
+  height: 65%;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.9;
+}
+
+/* Tech Stack Section */
+.tech-stack-section {
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 1);
+  height: 35%;
+}
+
+.tech-stack-section h3 {
+  color: rgb(0, 0, 0);
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.tech-icons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.tech-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tech-icon {
+  width: 3rem;
+  height: 3rem;
+  object-fit: contain;
+}
+
+.tech-name {
+  color: rgb(0, 0, 0);
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+/* Content Section */
+.content-section {
+  width: 55%;
+  height: 100%;
+  padding: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  overflow-y: auto;
+  background: white;
+  transition: background-color 0.3s ease;
+}
+
+.dark .content-section {
+  background: #1a1a1a;
+}
+
+.content-section::-webkit-scrollbar {
+  width: 6px;
+}
+
+.content-section::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 3px;
+}
+
+.content-section::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+}
+
+.dark .content-section::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.dark .content-section::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Card Header */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.project-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  transition: color 0.3s ease;
+}
+
+.dark .project-title {
+  color: #ffffff;
+}
+
+.project-links {
+  display: flex;
+  gap: 1.5rem;
+  padding-top: 0.5rem;
+}
+
+.link-item {
+  color: #4a5568;
+  font-size: 1.75rem;
+  transition: all 0.3s ease;
+}
+
+.dark .link-item {
+  color: #a0aec0;
+}
+
+.link-item:hover {
+  color: #2d3748;
+  transform: translateY(-2px);
+}
+
+.dark .link-item:hover {
+  color: #e2e8f0;
+}
+
+/* Approach Section */
+.approach-section h3,
+.tech-stack h3,
+.achievements-section h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 1.25rem;
+  transition: color 0.3s ease;
+}
+
+.dark .approach-section h3,
+.dark .tech-stack h3,
+.dark .achievements-section h3 {
+  color: #e2e8f0;
+}
+
+.approach-section p {
+  font-size: 1.6rem;
+  line-height: 1.7;
+  color: #4a5568;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.dark .approach-section p {
+  color: #a0aec0;
+}
+
+/* Achievements Section */
+.achievements-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.achievement-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.3rem;
+  color: #000000;
+  padding: 0.75rem 1rem;
+  background: rgba(0, 0, 0, 0.02);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.dark .achievement-item {
+  color: #e2e8f0;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.achievement-item:hover {
+  background: rgba(0, 0, 0, 0.04);
+  transform: translateX(5px);
+}
+
+.dark .achievement-item:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.achievement-icon {
+  color: #eab308;
+  font-size: 1.6rem;
+  flex-shrink: 0;
+}
+
+/* Tech Stack */
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.tech-tag {
+  padding: 0.6rem 1.2rem;
+  background: #f3f4f6;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #4a5568;
+  transition: all 0.3s ease;
+}
+
+.dark .tech-tag {
+  background: #2d3748;
+  color: #e2e8f0;
+}
+
+.tech-tag:hover {
+  background: #e5e7eb;
+  transform: translateY(-2px);
+}
+
+.dark .tech-tag:hover {
+  background: #4a5568;
+}
+
+/* Responsive Design */
+@media (max-width: 1440px) {
+  .card {
+    width: 95%;
+    height: 700px;
+  }
+
+  .content-section {
+    padding: 2.5rem;
+  }
+
+  .project-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .card {
+    flex-direction: column;
+    height: auto;
+    max-height: 85vh;
+  }
+
+  .image-section {
+    width: 100%;
+    height: 40%;
+  }
+
+  .content-section {
+    width: 100%;
+    height: 60%;
+  }
+}
+
+@media (max-width: 768px) {
+  .card-container {
+    padding: 1rem;
+  }
+
+  .content-section {
+    padding: 1.5rem;
+  }
+
+  .project-title {
+    font-size: 2rem;
+  }
+
+  .approach-section p,
+  .achievement-item {
+    font-size: 1.1rem;
+  }
+
+  .tech-tag {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .image-section {
+    height: 35%;
+  }
+
+  .card-header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .project-links {
+    padding-top: 0;
+  }
+}

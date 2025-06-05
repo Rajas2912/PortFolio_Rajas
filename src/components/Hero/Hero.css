@@ -1,0 +1,361 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap');
+
+.hero-section {
+  min-height: 85vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13rem 2rem;
+  background: #f8f9fa;
+  overflow: visible;
+  transition: background-color 0.3s ease;
+}
+
+.dark .hero-section {
+  background: #111111;
+}
+
+.hero-content {
+  max-width: 1500px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  align-items: center;
+}
+
+.hero-text-container {
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.intro-text {
+  font-size: 4rem;
+  font-weight: 400;
+  color: #1a1a1a;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.1;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.name-highlight {
+  font-family: 'Montserrat', sans-serif;
+
+  font-weight: 400;
+  background: linear-gradient(45deg, #000000, #868686);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.dark .name-highlight {
+  background: linear-gradient(45deg, #ff8a00, #e52e71);
+}
+
+.name-highlight:hover {
+  transform: scale(1.05);
+}
+
+.dark .intro-text {
+  color: #ffffff;
+}
+
+.dynamic-text {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  font-size: 3rem;
+  font-weight: 300;
+  color: #1a1a1a;
+  transition: color 0.3s ease;
+}
+
+.dark .dynamic-text {
+  color: #ffffff;
+}
+
+.prefix {
+  opacity: 0.7;
+}
+
+.typewriter {
+  font-weight: 600;
+  color: #1a1a1a;
+  transition: color 0.3s ease;
+}
+
+.dark .typewriter {
+  color: #ffffff;
+}
+
+.description {
+  font-size: 1.8rem;
+  line-height: 1.8;
+  color: #666;
+  max-width: 700px;
+  transition: color 0.3s ease;
+}
+
+.dark .description {
+  color: #a0aec0;
+}
+
+.cta-container {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.resume-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1rem 2rem;
+  background: #1a1a1a;
+  color: white;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border: none;
+  cursor: pointer;
+}
+
+.dark .resume-button {
+  background: #2d3748;
+  color: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.resume-button:hover {
+  background: #333;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
+}
+
+.dark .resume-button:hover {
+  background: #4a5568;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.25);
+}
+
+.resume-button .icon {
+  font-size: 1.2rem;
+}
+
+.resume-button.download {
+  background: transparent;
+  color: #1a1a1a;
+  border: 2px solid #1a1a1a;
+}
+
+.dark .resume-button.download {
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+/* Portrait Styles */
+.portrait-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.portrait-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%;
+  /* border-radius: 30px; */
+  overflow: hidden;
+  /* box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); */
+}
+
+.portrait-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* height: 100%; */
+  object-fit: cover;
+  /* border-radius: 30px; */
+  z-index: 2;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .hero-grid {
+    gap: 3rem;
+  }
+  
+  .portrait-container {
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 992px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .hero-text-container {
+    text-align: center;
+    margin: 0 auto;
+    align-items: center;
+  }
+
+  .portrait-container {
+    max-width: 400px;
+    margin-top: 2rem;
+  }
+
+  .cta-container {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .intro-text {
+    font-size: 3.5rem;
+  }
+
+  .name-highlight {
+    font-size: 3.8rem;
+  }
+
+  .dynamic-text {
+    font-size: 2.5rem;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .description {
+    font-size: 1.5rem;
+  }
+
+  .cta-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 3rem 1rem;
+  }
+
+  .intro-text {
+    font-size: 2.8rem;
+  }
+
+  .name-highlight {
+    font-size: 3rem;
+  }
+
+  .dynamic-text {
+    font-size: 2rem;
+  }
+
+  .description {
+    font-size: 1.3rem;
+  }
+
+  .resume-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Resume Overlay Styles */
+.resume-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.dark .resume-overlay {
+  background: rgba(17, 17, 17, 0.95);
+}
+
+.resume-container {
+  width: 90%;
+  max-width: 1000px;
+  height: 90vh;
+  position: relative;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+}
+
+.dark .resume-container {
+  background: #1a1a1a;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.resume-frame {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  background: #1a1a1a;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.dark .back-button {
+  background: #2d3748;
+  color: #ffffff;
+}
+
+.back-button:hover {
+  background: #333;
+  transform: translateY(-2px);
+}
+
+.dark .back-button:hover {
+  background: #4a5568;
+}
