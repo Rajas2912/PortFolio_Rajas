@@ -5,11 +5,18 @@ import "./MailboxButton.css";
 
 const MailboxButton = () => {
   return (
-    <div className="flex-shrink-0 w-[300px] h-full flex items-center justify-center">
-      <div className="main">
-        <Link to="#contact" className="center-icon">
+    <div className="flex-shrink-0 w-[300px] h-full flex items-center justify-center">      <div className="main">
+        <button 
+          onClick={() => {
+            const element = document.getElementById('contact');
+            if (element) {
+              element.scrollIntoView({ behavior: 'smooth' });
+            }
+          }} 
+          className="center-icon"
+        >
           <FiMail className="text-3xl" />
-        </Link>
+        </button>
         <svg id="rotatingText" viewBox="0 0 200 200" width="200" height="200">
           <defs>
             <path

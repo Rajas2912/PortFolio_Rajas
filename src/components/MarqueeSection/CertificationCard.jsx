@@ -114,13 +114,18 @@ const CertificationCard = ({ certifications = [] }) => {
         </AnimatePresence>
 
         <div className="flex items-center justify-between">
-          <Link
-            to="/certifications"
+          <button
+            onClick={() => {
+              const element = document.getElementById('certifications');
+              if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
             className="text-sm text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-300 flex items-center gap-1 group"
           >
             More certifications and publications
             <FiArrowRight className="text-lg transition-transform duration-300 group-hover:translate-x-1" />
-          </Link>
+          </button>
         </div>
       </div>
     </div>

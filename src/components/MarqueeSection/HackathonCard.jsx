@@ -134,14 +134,18 @@ const HackathonCard = ({ hackathons = [] }) => {
           </motion.div>
         </AnimatePresence>
 
-        <div className="flex items-center justify-between mt-auto">
-          <a
-            href="/hackathons"
+        <div className="flex items-center justify-between mt-auto">          <button
+            onClick={() => {
+              const element = document.getElementById('hackathons');
+              if (element) {
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }
+            }}
             className="text-sm text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-300 flex items-center gap-1 group"
           >
             View all hackathons
             <FiExternalLink className="text-lg transition-transform duration-300 group-hover:translate-x-1" />
-          </a>
+          </button>
         </div>
       </div>
     </div>
