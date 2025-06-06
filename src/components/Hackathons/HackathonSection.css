@@ -1,25 +1,19 @@
+/* Base Styles */
 .hackathon-section {
   padding: 2rem 0;
   background: #ebebeb;
   transition: background-color 0.3s ease;
 }
 
-.hackathon-title{
-    text-align: center;
-    font-family: 'Montserrat';
-    font-weight: 400;
-    margin-top: 2rem;
+.hackathon-title {
+  text-align: center;
+  font-family: 'Montserrat';
+  font-weight: 400;
+  margin-top: 2rem;
 }
-
 
 .dark .hackathon-section {
   background: #111111;
-}
-
-.hackathon-container {
-  max-width: 2000px;
-  margin: 0 auto;
-  padding: 0 0.3rem;
 }
 
 .hackathon-scroll {
@@ -51,10 +45,6 @@
   padding: 0 10vw;
 }
 
-.hackathon-item {
-  width: clamp(1000px, 80vw, 1400px);
-}
-
 .hackathon-card {
   background: rgb(255, 255, 255);
   border-radius: 24px;
@@ -77,19 +67,13 @@
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
 }
 
-.card-top {
-  display: flex;
-  gap: 2rem;
-  margin-bottom: 2rem;
-}
-
+/* Card Content */
 .card-content {
   flex: 1.2;
   padding: 2rem;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  max-width: 55%;
 }
 
 .right-column {
@@ -98,13 +82,11 @@
   flex-direction: column;
   gap: 2rem;
   padding-left: 2rem;
-  max-width: 45%;
 }
 
 .card-image {
   position: relative;
   overflow: hidden;
-  height: 500px;
   border-radius: 16px;
   background: rgba(0, 0, 0, 0.02);
   display: flex;
@@ -113,24 +95,12 @@
   width: 100%;
 }
 
-.dark .card-image {
-  background: rgba(255, 255, 255, 0.02);
-}
-
 .card-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   background: #f8f8f8;
   transition: transform 0.3s ease;
-}
-
-.dark .card-image img {
-  background: #1a1a1a;
-}
-
-.card-image:hover img {
-  transform: scale(1.02);
 }
 
 .card-header {
@@ -152,24 +122,7 @@
   color: #ffffff;
 }
 
-.position-badge {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 0.8rem 1.5rem;
-  background: rgba(0, 0, 0, 0.05);
-  border-radius: 25px;
-  font-weight: 600;
-  font-size: 1.1rem;
-  width: fit-content;
-  transition: background-color 0.3s ease;
-}
-
-.dark .position-badge {
-  background: rgba(255, 255, 255, 0.05);
-  color: #ffffff;
-}
-
+/* Info Sections */
 .info-sections {
   display: flex;
   flex-direction: column;
@@ -184,10 +137,6 @@
   transition: background-color 0.3s ease;
 }
 
-.dark .info-section {
-  background: rgba(255, 255, 255, 0.02);
-}
-
 .info-section h4 {
   font-size: 1.2rem;
   font-weight: 600;
@@ -197,45 +146,7 @@
   transition: color 0.3s ease;
 }
 
-.dark .info-section h4 {
-  color: #ffffff;
-}
-
-.info-section p {
-  font-size: 1.1rem;
-  color: #2d3748;
-  line-height: 1.6;
-  transition: color 0.3s ease;
-}
-
-.dark .info-section p {
-  color: #a0aec0;
-}
-
-.tech-stack {
-  background: rgba(0, 0, 0, 0.02);
-  padding: 1.5rem;
-  border-radius: 16px;
-  transition: background-color 0.3s ease;
-}
-
-.dark .tech-stack {
-  background: rgba(255, 255, 255, 0.02);
-}
-
-.tech-stack h4 {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #1a1a1a;
-  margin-bottom: 1rem;
-  font-family: 'Montserrat', sans-serif;
-  transition: color 0.3s ease;
-}
-
-.dark .tech-stack h4 {
-  color: #ffffff;
-}
-
+/* Tech Stack */
 .tech-tags {
   display: flex;
   flex-wrap: wrap;
@@ -252,116 +163,7 @@
   transition: all 0.3s ease;
 }
 
-.dark .tech-tag {
-  background: #2d3748;
-  color: #e2e8f0;
-}
-
-.devpost-link {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 1rem 1.5rem;
-  background: #0f0f0f;
-  color: white;
-  border-radius: 16px;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 1.1rem;
-  justify-content: center;
-  transition: all 0.2s ease;
-  margin-top: auto;
-  width: fit-content;
-}
-.video-link {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 1rem 1.5rem;
-  background: #0f0f0f;
-  color: white;
-  border-radius: 16px;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 1.1rem;
-  justify-content: center;
-  transition: all 0.2s ease;
-  margin-top: auto;
-  width: fit-content;
-}
-
-
-.dark .devpost-link {
-  background: #2d3748;
-}
-
-.devpost-link:hover {
-  background: #2d3748;
-  transform: translateY(-2px);
-}
-
-.dark .devpost-link:hover {
-  background: #4a5568;
-}
-
-/* Custom color for bronze medal */
-.text-bronze-400 {
-  color: #cd7f32;
-}
-
-/* Responsive Design */
-@media (max-width: 1400px) {
-  .hackathon-item {
-    width: clamp(900px, 75vw, 1200px);
-  }
-
-  .hackathon-card {
-    height: 550px;
-  }
-
-  .card-title {
-    font-size: 2.2rem;
-  }
-}
-
-@media (max-width: 1024px) {
-  .hackathon-item {
-    width: clamp(800px, 85vw, 1000px);
-  }
-
-  .hackathon-card {
-    height: 500px;
-  }
-
-  .card-content {
-    padding: 2rem;
-  }
-
-  .card-title {
-    font-size: 2rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .hackathon-card {
-    flex-direction: column;
-    height: auto;
-  }
-
-  .card-content,
-  .card-image {
-    max-width: 100%;
-  }
-
-  .card-image {
-    height: 300px;
-  }
-
-  .card-title {
-    font-size: 1.8rem;
-  }
-}
-
+/* Achievements */
 .achievements-section {
   flex: 1;
   padding: 1.5rem;
@@ -369,32 +171,6 @@
   border-radius: 16px;
   display: flex;
   flex-direction: column;
-  transition: background-color 0.3s ease;
-}
-
-.dark .achievements-section {
-  background: rgba(255, 255, 255, 0.02);
-}
-
-.achievements-section h4 {
-  color: #1a1a1a;
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  font-family: 'Montserrat', sans-serif;
-  transition: color 0.3s ease;
-}
-
-.dark .achievements-section h4 {
-  color: #ffffff;
-}
-
-.achievements-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  list-style: none;
-  padding: 0;
 }
 
 .achievement-item {
@@ -406,24 +182,9 @@
   background: white;
   padding: 0.75rem 1rem;
   border-radius: 12px;
-  transition: all 0.3s ease;
 }
 
-.dark .achievement-item {
-  background: #2d3748;
-  color: #e2e8f0;
-}
-
-.achievement-icon {
-  color: #fbbf24;
-  font-size: 1.1rem;
-  flex-shrink: 0;
-} 
-
-/* 
-added two buttons video and project  */
-
-/* Button Group Styles */
+/* Buttons */
 .button-group {
   display: flex;
   gap: 1rem;
@@ -444,37 +205,182 @@ added two buttons video and project  */
   justify-content: center;
 }
 
-.button-icon {
-  font-size: 1.2rem;
+/* Dark Mode Styles */
+.dark .card-image {
+  background: rgba(255, 255, 255, 0.02);
 }
 
-.github-button {
-  background-color: #333;
-  color: white;
+.dark .card-image img {
+  background: #1a1a1a;
 }
 
-.github-button:hover {
-  background-color: #444;
-  transform: translateY(-2px);
+.dark .info-section {
+  background: rgba(255, 255, 255, 0.02);
 }
 
-.video-button {
-  background-color: #333;
-  color: white;
+.dark .info-section h4 {
+  color: #ffffff;
 }
 
-.video-button:hover {
-  background-color: #444;
-  transform: translateY(-2px);
+.dark .info-section p {
+  color: #a0aec0;
 }
 
-/* Responsive adjustments */
+.dark .tech-stack {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.dark .tech-stack h4 {
+  color: #ffffff;
+}
+
+.dark .tech-tag {
+  background: #2d3748;
+  color: #e2e8f0;
+}
+
+.dark .achievements-section {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.dark .achievements-section h4 {
+  color: #ffffff;
+}
+
+.dark .achievement-item {
+  background: #2d3748;
+  color: #e2e8f0;
+}
+
+/* Responsive Adjustments */
+@media (min-width: 1150px) and (max-width: 1450px) {
+  .hackathon-item {
+    width: clamp(800px, 85vw, 1000px);
+  }
+
+  .hackathon-card {
+    height: 650px;
+    min-height: 650px;
+    padding: 2rem;
+    gap: 2rem;
+  }
+
+  .card-content {
+    padding: 1.5rem;
+    max-width: 50%;
+  }
+
+  .right-column {
+    max-width: 50%;
+    padding-left: 1.5rem;
+  }
+
+  .card-title {
+    font-size: 2rem;
+  }
+
+  .card-image {
+    height: 350px;
+  }
+
+  .info-section h4,
+  .tech-stack h4,
+  .achievements-section h4 {
+    font-size: 1.1rem;
+  }
+
+  .info-section p {
+    font-size: 1rem;
+  }
+
+  .tech-tag {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .button-group {
+    margin-top: 1.5rem;
+  }
+}
+
+@media (min-width: 1451px) and (max-width: 1950px) {
+  .hackathon-item {
+    width: clamp(1000px, 85vw, 1200px);
+  }
+
+  .hackathon-card {
+    height: 950px;
+    min-height: 650px;
+    padding: 1.5rem;
+    gap: 2.5rem;
+  }
+
+  .card-content {
+    padding: 2rem;
+    max-width: 50%;
+  }
+
+  .right-column {
+    max-width: 50%;
+    padding-left: 2rem;
+  }
+
+  .card-title {
+    font-size: 2.2rem;
+  }
+
+  .card-image {
+    height: 400px;
+  }
+
+  .info-section h4,
+  .tech-stack h4,
+  .achievements-section h4 {
+    font-size: 1.2rem;
+  }
+
+  .info-section p {
+    font-size: 1.1rem;
+  }
+
+  .tech-tag {
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+  }
+
+  .button-group {
+    margin-top: 2rem;
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 1024px) {
+  .hackathon-card {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .card-content,
+  .right-column {
+    max-width: 100%;
+  }
+
+  .card-image {
+    height: 300px;
+  }
+}
+
 @media (max-width: 768px) {
+  .hackathon-card {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+
+  .card-title {
+    font-size: 1.8rem;
+  }
+
   .button-group {
     flex-direction: column;
-  }
-  
-  .project-button {
-    width: 100%;
   }
 }
