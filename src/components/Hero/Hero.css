@@ -6,7 +6,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 13rem 2rem;
+
+  padding-top: 5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
   background: #f8f9fa;
   overflow: visible;
   transition: background-color 0.3s ease;
@@ -50,17 +53,23 @@
 
 .name-highlight {
   font-family: 'Montserrat', sans-serif;
-
-  font-weight: 400;
-  background: linear-gradient(45deg, #000000, #868686);
+  font-weight: 600;
+  background: linear-gradient(45deg, #2c5364, #203a43, #0f2027);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
-  transition: transform 0.3s ease;
+  transition: all 0.5s ease;
+  position: relative;
+  padding: 0 0.1em;
 }
 
 .dark .name-highlight {
-  background: linear-gradient(45deg, #ff8a00, #e52e71);
+  background: linear-gradient(45deg, #ffffff, #c4c2c2, #979797);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 20px rgba(255, 69, 0, 0.1);
 }
 
 .name-highlight:hover {
@@ -169,28 +178,30 @@
 .portrait-container {
   position: relative;
   width: 100%;
-  max-width: 600px;
+  max-width: 700px;
+  height: 69vh;
+  /* height: 100%; */
   margin: 0 auto;
+  overflow: hidden;
 }
 
 .portrait-wrapper {
   position: relative;
   width: 100%;
-  padding-bottom: 100%;
-  /* border-radius: 30px; */
+  height: 100%;
   overflow: hidden;
-  /* box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); */
 }
 
 .portrait-image {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  /* height: 100%; */
+  height: 100%;
   object-fit: cover;
-  /* border-radius: 30px; */
-  z-index: 2;
+  object-position: center;
+  transition: transform 0.3s ease;
+}
+
+.portrait-image:hover {
+  transform: scale(1.03);
 }
 
 /* Responsive Design */
@@ -292,16 +303,17 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.98);
   z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.3s ease;
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
 }
 
 .dark .resume-overlay {
-  background: rgba(17, 17, 17, 0.95);
+  background: rgba(17, 17, 17, 0.98);
 }
 
 .resume-container {
@@ -358,4 +370,75 @@
 
 .dark .back-button:hover {
   background: #4a5568;
+}
+
+/* Loading and Error States */
+.loading-spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.dark .loading-spinner {
+  color: #a0aec0;
+}
+
+.error-message {
+  color: #e53e3e;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 1rem;
+  background: rgba(229, 62, 62, 0.1);
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.dark .error-message {
+  color: #fc8181;
+  background: rgba(252, 129, 129, 0.1);
+}
+
+/* Resume Button States */
+.resume-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  background: #ccc;
+}
+
+.dark .resume-button:disabled {
+  background: #4a5568;
+}
+
+/* Resume Container Enhancements */
+.resume-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.dark .resume-container {
+  background: #1a1a1a;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.resume-frame {
+  width: 100%;
+  height: calc(100% - 60px);
+  border: none;
+  border-radius: 12px;
+  background: #f8f9fa;
+  transition: all 0.3s ease;
+}
+
+.dark .resume-frame {
+  background: #2d3748;
 }

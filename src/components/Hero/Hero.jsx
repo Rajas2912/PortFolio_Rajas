@@ -6,6 +6,7 @@ import portrait from "./potrait-23.png";
 import linked from "./prof23.jpg";
 import gemini from "./without_bg.png";
 import ghibli from "./profghibli.png";
+import calm from "./Calm212bg.png";
 import { useState } from 'react';
 import resumepdf from './Rajas_Bhosale_CV.pdf';
 import './Hero.css';
@@ -155,7 +156,7 @@ const Hero = () => {
           >
             <div className="portrait-wrapper">
               <motion.img
-                src={ghibli}
+                src={calm}
                 alt="Rajas Portrait"
                 className="portrait-image"
               />
