@@ -1,15 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap');
 
+/* Base Styles */
 .hero-section {
   min-height: 85vh;
-  position: relative;
+  padding: clamp(3rem, 5vw, 5rem) clamp(1rem, 3vw, 2rem);
   display: flex;
   align-items: center;
   justify-content: center;
-
-  padding-top: 5rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
   background: #f8f9fa;
   overflow: visible;
   transition: background-color 0.3s ease;
@@ -20,8 +17,8 @@
 }
 
 .hero-content {
-  max-width: 1500px;
   width: 100%;
+  max-width: min(1500px, 90vw);
   margin: 0 auto;
   position: relative;
   z-index: 1;
@@ -30,10 +27,11 @@
 .hero-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+  gap: clamp(1rem, 2vw, 2rem);
   align-items: center;
 }
 
+/* Text Content Styles */
 .hero-text-container {
   max-width: 900px;
   display: flex;
@@ -42,11 +40,11 @@
 }
 
 .intro-text {
-  font-size: 4rem;
+  font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 400;
   color: #1a1a1a;
   font-family: 'Montserrat', sans-serif;
-  line-height: 1.1;
+  line-height: 1.2;
   margin: 0;
   transition: color 0.3s ease;
 }
@@ -54,7 +52,7 @@
 .name-highlight {
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
-  background: linear-gradient(45deg, #2c5364, #203a43, #0f2027);
+  background: linear-gradient(45deg, #000000, #3d3d3d, #0f2027);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -65,11 +63,16 @@
 }
 
 .dark .name-highlight {
-  background: linear-gradient(45deg, #ffffff, #c4c2c2, #979797);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  background: linear-gradient(45deg, #ebebeb, #ffffff, #ffffff);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 20px rgba(255, 69, 0, 0.1);
+  display: inline-block;
+  transition: all 0.5s ease;
+  position: relative;
+  padding: 0 0.1em;
 }
 
 .name-highlight:hover {
@@ -84,7 +87,7 @@
   display: flex;
   align-items: baseline;
   gap: 1rem;
-  font-size: 3rem;
+  font-size: clamp(1.8rem, 4vw, 3rem);
   font-weight: 300;
   color: #1a1a1a;
   transition: color 0.3s ease;
@@ -109,32 +112,35 @@
 }
 
 .description {
-  font-size: 1.8rem;
-  line-height: 1.8;
+  font-size: clamp(1.1rem, 1.5vw, 1.8rem);
+  line-height: 1.6;
   color: #666;
   max-width: 700px;
   transition: color 0.3s ease;
+  margin: 1rem 0;
 }
 
 .dark .description {
   color: #a0aec0;
 }
 
+/* CTA Buttons */
 .cta-container {
   display: flex;
   gap: 1.5rem;
   margin-top: 1rem;
+  flex-wrap: wrap;
 }
 
 .resume-button {
   display: inline-flex;
   align-items: center;
   gap: 0.8rem;
-  padding: 1rem 2rem;
+  padding: clamp(0.8rem, 1.2vw, 1rem) clamp(1.5rem, 2.5vw, 2rem);
   background: #1a1a1a;
   color: white;
   border-radius: 50px;
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 1.1vw, 1.1rem);
   font-weight: 500;
   text-decoration: none;
   transition: all 0.3s ease;
@@ -156,11 +162,10 @@
 
 .dark .resume-button:hover {
   background: #4a5568;
-  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.25);
 }
 
 .resume-button .icon {
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 1.2vw, 1.2rem);
 }
 
 .resume-button.download {
@@ -179,8 +184,7 @@
   position: relative;
   width: 100%;
   max-width: 700px;
-  height: 69vh;
-  /* height: 100%; */
+  aspect-ratio: 3/4;
   margin: 0 auto;
   overflow: hidden;
 }
@@ -204,14 +208,10 @@
   transform: scale(1.03);
 }
 
-/* Responsive Design */
+/* Responsive Breakpoints */
 @media (max-width: 1200px) {
-  .hero-grid {
-    gap: 3rem;
-  }
-  
   .portrait-container {
-    max-width: 500px;
+    max-width: 550px;
   }
 }
 
@@ -228,71 +228,110 @@
   }
 
   .portrait-container {
-    max-width: 400px;
+    max-width: 450px;
     margin-top: 2rem;
+    order: -1; /* Move image above text on mobile if needed */
   }
 
-  .cta-container {
-    justify-content: center;
+  .dynamic-text {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
   }
 }
 
 @media (max-width: 768px) {
   .hero-section {
-    padding: 4rem 1.5rem;
-  }
-
-  .intro-text {
-    font-size: 3.5rem;
-  }
-
-  .name-highlight {
-    font-size: 3.8rem;
-  }
-
-  .dynamic-text {
-    font-size: 2.5rem;
-    flex-direction: column;
-    gap: 0.5rem;
-    align-items: center;
-  }
-
-  .description {
-    font-size: 1.5rem;
+    min-height: auto;
+    padding: 3rem 1.5rem;
   }
 
   .cta-container {
     flex-direction: column;
     align-items: center;
   }
+
+  .resume-button {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 @media (max-width: 480px) {
   .hero-section {
-    padding: 3rem 1rem;
+    padding: 2.5rem 1rem;
   }
 
-  .intro-text {
-    font-size: 2.8rem;
+  .portrait-container {
+    max-width: 350px;
+  }
+}
+
+@media (min-width: 1150px) and (max-width: 1450px){
+
+
+.hero-section {
+  min-height: 85vh;
+  padding: clamp(3rem, 5vw, 5rem) clamp(1rem, 3vw, 2rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8f9fa;
+  overflow: visible;
+  transition: background-color 0.3s ease;
+}
+
+
+  .hero-content {
+    max-width: 800px;
   }
 
-  .name-highlight {
-    font-size: 3rem;
+  .hero-grid {
+    padding-top: 7rem;
+    gap: 2rem;
   }
 
-  .dynamic-text {
+  .portrait-container {
+    max-width: 500px;
+  }
+.hero-text-container {
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.intro-text {
+    /* font-size: clamp(1.5rem, 5vw, 4rem); */
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: #1a1a1a;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.2;
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+    .dynamic-text {
     font-size: 2rem;
+    max-width: 500px;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}
+
+
+/* Large Screens (2K and above) */
+@media (min-width: 1920px) {
+  .hero-content {
+    max-width: 1600px;
   }
 
-  .description {
-    font-size: 1.3rem;
+  .hero-grid {
+    gap: 3rem;
   }
 
-  .resume-button {
-    padding: 0.8rem 1.5rem;
-    font-size: 1rem;
-    width: 100%;
-    justify-content: center;
+  .portrait-container {
+    max-width: 750px;
   }
 }
 
@@ -410,35 +449,4 @@
 
 .dark .resume-button:disabled {
   background: #4a5568;
-}
-
-/* Resume Container Enhancements */
-.resume-container {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  padding: 1rem;
-  background: white;
-  border-radius: 20px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-}
-
-.dark .resume-container {
-  background: #1a1a1a;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-}
-
-.resume-frame {
-  width: 100%;
-  height: calc(100% - 60px);
-  border: none;
-  border-radius: 12px;
-  background: #f8f9fa;
-  transition: all 0.3s ease;
-}
-
-.dark .resume-frame {
-  background: #2d3748;
 }

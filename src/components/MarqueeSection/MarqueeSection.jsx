@@ -8,6 +8,9 @@ import ProjectCard from './ProjectCard'
 import CertificationCard from './CertificationCard'
 import HackathonCard from './HackathonCard'
 import MailboxButton from './MailboxButton'
+import AI from '../assets/Gifs/AI.gif';
+import Port from '../assets/Gifs/port2.gif';
+import vanguard1 from '../assets/Gifs/vanguard.jpg';
 import SkillsCard from './SkillsCard'
 import AWS from '../assets/Certificates/AWS.png';
 import iitm from '../assets/Certificates/IIT.png';
@@ -31,7 +34,7 @@ const MarqueeSection = () => {
     {
       title: "Portfolio Website",
       description: "A modern, interactive portfolio featuring parallax animations, horizontal scrolling cards, and smooth transitions.",
-      image: "https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg",
+      image: Port,
       category: "Web Development",
       tech: ["React", "Framer Motion", "TailwindCSS", "React Router"],
       isNew: true,
@@ -49,7 +52,7 @@ const MarqueeSection = () => {
     {
       title: "AI-Powered Learning Management System",
       description: "An intelligent ERP system automating academic workflows with AI-driven features including voice-cloned Viva and smart assessments.",
-      image: "https://images.pexels.com/photos/5905700/pexels-photo-5905700.jpeg",
+      image: AI,
       category: "AI & Education",
       tech: ["Python", "Flask", "React", "RAG", "ChromaDB", "NLP"],
       isNew: true,
@@ -67,7 +70,7 @@ const MarqueeSection = () => {
     {
       title: "Vanguard - Autonomous Robot",
       description: "An autonomous robot using ESP32 and ArUco markers for intelligent path mapping and object classification.",
-      image: "https://images.pexels.com/photos/2085831/pexels-photo-2085831.jpeg",
+      image: vanguard1,
       category: "Robotics & AI",
       tech: ["Python", "OpenCV", "ESP32", "Machine Learning"],
       isNew: true,
