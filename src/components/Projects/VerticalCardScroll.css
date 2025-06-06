@@ -17,6 +17,7 @@
 
 .dark .projects-title {
   background-color: #111111;
+  color: white;
 }
 
 .vertical-scroll-container {
@@ -65,6 +66,7 @@
 
 .dark .marquee-container {
   background: #1a1a1a;
+  
 }
 
 .marquee-container span {

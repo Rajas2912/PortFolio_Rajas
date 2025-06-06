@@ -54,7 +54,7 @@ function App() {
               <Route path="/" element={
                 <main>
                   <section id="home">
-                    <Header />
+                    {/* <Header /> */}
                     <Hero />
                   </section>
 

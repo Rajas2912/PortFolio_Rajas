@@ -218,6 +218,102 @@ body.scroll-lock {
   padding-right: var(--scrollbar-width); /* Prevent layout shift */
 }
 
+/* Theme Toggle Button */
+.theme-toggle-hero {
+  position: absolute;
+  top: 2rem;
+  right: 5rem;
+  width: 80px;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  z-index: 100;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.dark .theme-toggle-hero {
+  background: rgba(17, 17, 17, 0.8);
+  border-color: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.theme-toggle-hero:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.theme-toggle-slider {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: #ffffff;
+  border-radius: 50%;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.theme-toggle-hero[data-dark="true"] .theme-toggle-slider {
+  transform: translateX(40px);
+  background: #2d3748;
+}
+
+.theme-toggle-icons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 8px;
+  color: white;
+  position: relative;
+  z-index: 2;
+}
+
+.theme-toggle-icons svg {
+  width: 20px;
+  height: 20px;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.theme-toggle-hero[data-dark="true"] .theme-toggle-icons svg:last-child,
+.theme-toggle-hero[data-dark="false"] .theme-toggle-icons svg:first-child {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .theme-toggle-hero {
+    top: 1rem;
+    right: 4rem;
+    width: 70px;
+    height: 35px;
+  }
+  
+  .theme-toggle-slider {
+    width: 25px;
+    height: 25px;
+  }
+  
+  .theme-toggle-hero[data-dark="true"] .theme-toggle-slider {
+    transform: translateX(35px);
+  }
+  
+  .theme-toggle-icons svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
 /* Responsive Breakpoints */
 @media (max-width: 1200px) {
   .portrait-container {

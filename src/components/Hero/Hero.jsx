@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { FiArrowRight, FiDownload, FiArrowLeft } from 'react-icons/fi'
+import { BsSun, BsMoon } from "react-icons/bs";
 import { Typewriter } from "react-simple-typewriter";
 import { useTheme } from "../../context/ThemeContext";
 import { useState, useEffect } from 'react';
@@ -32,7 +33,7 @@ const useScrollLock = (isLocked) => {
 
 const Hero = () => {
   const [showResume, setShowResume] = useState(false);
-  const { isDarkMode } = useTheme();
+  const { isDarkMode, toggleTheme } = useTheme();
   
   // Use the scroll lock hook
   useScrollLock(showResume);
@@ -100,7 +101,23 @@ const Hero = () => {
       className={`hero-section ${isDarkMode ? 'dark' : ''}`}
       key="hero"
       {...pageTransition}
-    >
+    >      <motion.button
+        className="theme-toggle-hero"
+        onClick={toggleTheme}
+        aria-label="Toggle dark mode"
+        data-dark={isDarkMode}
+      >
+        <div className="theme-toggle-icons">
+          <BsSun size={18} />
+          <BsMoon size={18} />
+        </div>
+        <motion.div 
+          className="theme-toggle-slider"
+          layout
+          transition={{ type: "spring", stiffness: 700, damping: 30 }}
+        />
+      </motion.button>
+      
       <div className="hero-content">
         <div className="hero-grid">
           <motion.div 
