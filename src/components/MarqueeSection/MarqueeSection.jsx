@@ -39,8 +39,8 @@ const MarqueeSection = () => {
       tech: ["React", "Framer Motion", "TailwindCSS", "React Router"],
       isNew: true,
       links: {
-        github: "https://github.com",
-        live: "https://demo.com"
+        github: "https://github.com/Rajas2912/PortFolio_Rajas",
+        live: "https://port-folio-rajas.vercel.app/"
       },
       sectionInfo: {
         title: "Projects",
@@ -57,8 +57,8 @@ const MarqueeSection = () => {
       tech: ["Python", "Flask", "React", "RAG", "ChromaDB", "NLP"],
       isNew: true,
       links: {
-        github: "https://github.com",
-        live: "https://demo.com"
+        github: "https://github.com/Rajas2912/Team_Kaizen_HackXplore",
+        live: "https://www.youtube.com/watch?v=JsFyMt7VpSc"
       },
       sectionInfo: {
         title: "Projects",
@@ -75,8 +75,8 @@ const MarqueeSection = () => {
       tech: ["Python", "OpenCV", "ESP32", "Machine Learning"],
       isNew: true,
       links: {
-        github: "https://github.com",
-        live: "https://demo.com"
+        github: "https://github.com/Rajas2912/Vanguard",
+        live: "https://drive.google.com/file/d/19j7cWe1ZemrYmOD2bDexGR0BdCvMuwTC/view"
       },
       sectionInfo: {
         title: "Projects",
