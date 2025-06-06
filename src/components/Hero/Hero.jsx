@@ -2,18 +2,40 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { FiArrowRight, FiDownload, FiArrowLeft } from 'react-icons/fi'
 import { Typewriter } from "react-simple-typewriter";
 import { useTheme } from "../../context/ThemeContext";
-import portrait from "./potrait-23.png";
-import linked from "./prof23.jpg";
-import gemini from "./without_bg.png";
-import ghibli from "./profghibli.png";
-import calm from "./Calm212bg.png";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import resumepdf from './Rajas_Bhosale_CV.pdf';
+import calm from './Calm212bg.png';
 import './Hero.css';
+
+// Custom hook for scroll locking
+const useScrollLock = (isLocked) => {
+  useEffect(() => {
+    if (isLocked) {
+      // Save current scroll position
+      const scrollY = window.scrollY;
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = '100%';
+      document.body.style.overflow = 'hidden';
+      
+      return () => {
+        // Restore scroll position when unlocking
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        document.body.style.overflow = '';
+        window.scrollTo(0, scrollY);
+      };
+    }
+  }, [isLocked]);
+};
 
 const Hero = () => {
   const [showResume, setShowResume] = useState(false);
   const { isDarkMode } = useTheme();
+  
+  // Use the scroll lock hook
+  useScrollLock(showResume);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -55,7 +77,7 @@ const Hero = () => {
       >
         <div className="resume-container">
           <iframe 
-            src="/resume.pdf" 
+            src={resumepdf} 
             title="Resume"
             className="resume-frame"
           />

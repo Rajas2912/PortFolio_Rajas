@@ -2,7 +2,7 @@
 
 /* Base Styles */
 .hero-section {
-  min-height: 85vh;
+  min-height: 55vh;
   padding: clamp(3rem, 5vw, 5rem) clamp(1rem, 3vw, 2rem);
   display: flex;
   align-items: center;
@@ -208,6 +208,16 @@
   transform: scale(1.03);
 }
 
+/* Scroll Lock */
+:root {
+  --scrollbar-width: calc(100vw - 100%);
+}
+
+body.scroll-lock {
+  overflow: hidden;
+  padding-right: var(--scrollbar-width); /* Prevent layout shift */
+}
+
 /* Responsive Breakpoints */
 @media (max-width: 1200px) {
   .portrait-container {
@@ -319,9 +329,73 @@
   }
 }
 
+@media (min-width: 1451px) and (max-width: 2150px){
+
+
+.hero-section {
+  min-height: 85vh;
+  padding: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8f9fa;
+  overflow: visible;
+  transition: background-color 0.3s ease;
+}
+
+
+  .hero-content {
+    max-width: 1200px;
+  }
+
+  .hero-grid {
+    padding-top: 3rem;
+    gap: 2rem;
+  }
+
+  .portrait-container {
+    max-width: 500px;
+  }
+.hero-text-container {
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.intro-text {
+    /* font-size: clamp(1.5rem, 5vw, 4rem); */
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: #1a1a1a;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.2;
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+    .dynamic-text {
+    font-size: 2rem;
+    max-width: 500px;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Large Screens (2K and above) */
-@media (min-width: 1920px) {
+/* @media (min-width: 1920px) {
   .hero-content {
     max-width: 1600px;
   }
@@ -333,7 +407,7 @@
   .portrait-container {
     max-width: 750px;
   }
-}
+} */
 
 /* Resume Overlay Styles */
 .resume-overlay {
@@ -356,8 +430,8 @@
 }
 
 .resume-container {
-  width: 90%;
-  max-width: 1000px;
+  width: 100%;
+  max-width: 1450px;
   height: 90vh;
   position: relative;
   background: white;
