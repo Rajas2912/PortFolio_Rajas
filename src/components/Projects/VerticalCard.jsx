@@ -12,7 +12,7 @@ const VerticalCard = ({
   tech,
   achievements,
   image,
-  url,
+  links,
   color,
   i,
   progress,
@@ -65,12 +65,28 @@ const VerticalCard = ({
           <div className="card-header">
             <h2 className="project-title">{title}</h2>
             <div className="project-links">
-              <a href="#" className="link-item" aria-label="View on GitHub">
-                <FiGithub />
-              </a>
-              <a href="#" className="link-item" aria-label="Watch Demo">
-                <FiYoutube />
-              </a>
+              {links?.github && (
+                <a 
+                  href={links.github} 
+                  className="link-item" 
+                  aria-label="View on GitHub"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FiGithub />
+                </a>
+              )}
+              {links?.video && (
+                <a 
+                  href={links.video} 
+                  className="link-item" 
+                  aria-label="Watch Demo"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FiYoutube />
+                </a>
+              )}
             </div>
           </div>
 
