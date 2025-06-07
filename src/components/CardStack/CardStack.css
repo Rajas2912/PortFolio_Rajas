@@ -1,0 +1,61 @@
+.card-stack-section {
+  width: 100%;
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f8f9fa;
+  transition: background-color 0.3s ease;
+}
+
+.dark .card-stack-section {
+  background: #000000;
+}
+
+.stack-container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .stack-container {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .card-stack-section {
+    padding: 2rem 1rem;
+  }
+  
+  .stacked-card {
+    flex-direction: column;
+    height: 500px;
+  }
+  
+  .card-image-container {
+    width: 100%;
+    height: 40%;
+  }
+  
+  .card-content {
+    width: 100%;
+    height: 60%;
+    padding: 1.5rem;
+  }
+  
+  .card-title {
+    font-size: 1.5rem;
+  }
+  
+  .tech-list {
+    margin-top: 1rem;
+  }
+}

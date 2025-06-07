@@ -34,4 +34,15 @@
   margin-top: 1rem;
 }
 
-/* Rest of existing styles... */ 
+.card-stack-wrapper {
+  width: 100%;
+  padding: 4rem 0;
+  background: #f8f9fa;
+  transition: background-color 0.3s ease;
+}
+
+.dark .card-stack-wrapper {
+  background: #000000;
+}
+
+/* Rest of existing styles... */

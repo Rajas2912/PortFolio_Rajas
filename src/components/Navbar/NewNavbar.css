@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
 .main_navbar {
   position: fixed;
   top: 0;
@@ -313,4 +315,27 @@
     text-align: center;
     font-size: 0.9rem;
   }
+}
+
+/* Name Logo Styles */
+.name-logo {
+  position: fixed;
+  top: 1.5rem;
+  left: 2rem;
+  z-index: 60;
+  cursor: pointer;
+  mix-blend-mode: difference;
+}
+
+.name-logo h1 {
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  font-size: 1.25rem;
+  transition: transform 0.3s ease;
+}
+
+.name-logo:hover h1 {
+  transform: scale(1.05);
 }

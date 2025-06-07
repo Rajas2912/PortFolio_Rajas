@@ -3,6 +3,7 @@ import Marquee from 'react-fast-marquee'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { FiArrowRight, FiChevronRight } from 'react-icons/fi'
+import MarqueeStackedCard from './MarqueeStackedCard'
 import { Link } from 'react-router-dom'
 import ProjectCard from './ProjectCard'
 import CertificationCard from './CertificationCard'
@@ -21,6 +22,8 @@ import amazonML from '../assets/hackathons/AmazonMl.png';
 import quasarImg from '../assets/hackathons/quasar.jpg';
 import hackXploreImg from '../assets/hackathons/hackXplore.png';
 import './MarqueeSection.css'
+import CardStack from '../CardStack/CardStack';
+import { projects_stack } from '../CardStack/projects_data';
 
 const MarqueeSection = () => {
   const marqueeRef = useRef(null)
@@ -178,13 +181,6 @@ const MarqueeSection = () => {
 
   return (
     <div className="w-full overflow-hidden" ref={ref}>
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-        transition={{ duration: 0.6 }}
-        className="text-center"
-      >
-      </motion.div>
 
       <div ref={marqueeRef}>
         <motion.div
@@ -195,18 +191,30 @@ const MarqueeSection = () => {
           {/* First Marquee - Moving Left (default) */}
           <Marquee
             gradient={false}
-            speed={60}
+            speed={70}
             pauseOnHover={true}
             className="py-8"
           >
-            <div className="flex gap-24 px-8">
-              {/* Project Card */}
+            <div className="flex gap-32 px-12">
+
               {projects.map((project, index) => (
                 <CardWithInfo key={`project-${index}`} sectionInfo={project.sectionInfo}>
                   <ProjectCard project={project} />
                 </CardWithInfo>
               ))}
-              
+
+              {/* Stacked Project Cards */}
+              {/* <CardWithInfo 
+                sectionInfo={{
+                  title: "Quick View",
+                  description: "Featured projects in a stack",
+                  stats: "Interactive",
+                  highlight: "Hover to Expand"
+                }}
+              >
+                <MarqueeStackedCard projects={projects_stack.slice(0, 3)} />
+              </CardWithInfo> */}
+
               {/* Certification Card */}
               <CertificationCard certifications={certifications} />
               {/* Mailbox Button */}
@@ -223,6 +231,19 @@ const MarqueeSection = () => {
                   <ProjectCard project={project} />
                 </CardWithInfo>
               ))}
+              
+              {/* Duplicate Stacked Project Cards */}
+              {/* <CardWithInfo 
+                sectionInfo={{
+                  title: "Quick View",
+                  description: "Featured projects in a stack",
+                  stats: "Interactive",
+                  highlight: "Hover to Expand"
+                }}
+              >
+                <MarqueeStackedCard projects={projects_stack.slice(0, 3)} />
+              </CardWithInfo> */}
+
               <CertificationCard certifications={certifications} />
               <MailboxButton />
               <HackathonCard hackathons={hackathons} />

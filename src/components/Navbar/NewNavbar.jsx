@@ -34,8 +34,20 @@ export const NewNavbar = () => {
     }
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  };
+
   return (
     <>
+      {/* Name Logo */}
+      <div className="name-logo" onClick={scrollToTop}>
+        <h1>RAJAS BHOSALE</h1>
+      </div>
+
       <button 
         className={`hamburger-button ${isDarkMode ? 'dark' : ''}`}
         onClick={toggleSidebar}
