@@ -66,7 +66,7 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: <FaEnvelope />,
-      text: 'rajasvbhosale.com',
+      text: 'rajasvbhosale.gmail.com',
       label: 'Email',
       action: 'mailto:rajasvbhosale@gmail.com'
     },

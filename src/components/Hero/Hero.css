@@ -265,7 +265,7 @@ body.scroll-lock {
 
 .theme-toggle-hero[data-dark="true"] .theme-toggle-slider {
   transform: translateX(40px);
-  background: #2d3748;
+  background: #1f1f1f;
 }
 
 .theme-toggle-icons {

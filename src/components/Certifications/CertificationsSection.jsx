@@ -136,7 +136,7 @@ const CertificationsSection = () => {
   ];
 
   return (
-    <div className="certifications-section" id="certifications">
+    <div className="certifications-section" id="certifications" >
       <motion.div 
         className="section-title"
         initial={{ opacity: 0, y: 20 }}

@@ -118,6 +118,81 @@
   background: #111111;
 }
 
+.project-section {
+  background-color: #f8f9fa;
+  min-height: 100vh;
+  padding: 2rem 0;
+}
+
+.dark .project-section {
+  background-color: #000;
+}
+
+.project-title {
+  color: #1a1a1a;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.dark .project-title {
+  color: #fff;
+}
+
+.project-card {
+  background: #fff;
+  border-radius: 1rem;
+  padding: 2rem;
+  margin: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dark .project-card {
+  background: #1a1a1a;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.project-card h3 {
+  color: #1a1a1a;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.dark .project-card h3 {
+  color: #fff;
+}
+
+.project-card p {
+  color: #666;
+}
+
+.dark .project-card p {
+  color: #aaa;
+}
+
+.tech-stack {
+  color: #1a1a1a;
+}
+
+.dark .tech-stack {
+  color: #fff;
+}
+
+.project-link {
+  color: #1a1a1a;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.dark .project-link {
+  color: #fff;
+}
+
+.project-link:hover {
+  color: #007bff;
+}
+
 @keyframes marquee {
   0% {
     transform: translateX(0);

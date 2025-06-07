@@ -18,7 +18,7 @@
 
 .hackathon-scroll {
   background: #ebebeb;
-  height: 350vh;  /* Reduced from 300vh for smoother scrolling */
+  height: 450vh;  /* Reduced from 300vh for smoother scrolling */
   transition: background-color 0.3s ease;
 }
 

@@ -223,7 +223,7 @@ const HackathonSection = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="hackathon-scroll" id="hackathons">
+    <section ref={sectionRef} className="hackathon-scroll" id="hackathons" style={{ marginTop: "2rem" }}>
       <div className="hackathon-title">
         <h1>✦ HACKATHONS</h1>
       </div>

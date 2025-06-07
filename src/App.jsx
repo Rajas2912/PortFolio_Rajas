@@ -61,7 +61,7 @@ function App() {
                   <motion.section
                     id="skills"
                     variants={sectionVariants}
-                    className="py-2 md:py-6 bg-gray-100 dark:bg-gray-900"
+                    className="py-2 md:py-6 bg-black-700 dark:bg-black-900"
                   >
                     <MarqueeSection />
                   </motion.section>
@@ -80,7 +80,7 @@ function App() {
                     <HackathonSection />
                   </section>
 
-                  <section id="certifications">
+                  <section id="certifications" style={{marginTop: '8rem'}}>
                     <MarqueeText text="CERTIFICATIONS" />
                     <CertificationsSection />
                   </section>
