@@ -1,5 +1,5 @@
-import React, { useRef } from "react";
-import { motion, useScroll, useTransform, easeInOut } from "framer-motion";
+import React, { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 import { FaTrophy, FaMedal, FaCertificate } from "react-icons/fa";
 import { FiYoutube } from "react-icons/fi";
 import { FiGithub } from "react-icons/fi";
@@ -66,32 +66,32 @@ const HackathonCard = ({ hackathon }) => {
               </div>
             </div>
 
-<div className="button-group">
-  {hackathon.devpostLink && (
-    <a 
-      href={hackathon.devpostLink} 
-      target="_blank" 
-      rel="noopener noreferrer"
-      className="project-button github-button"
-    >
-      <FiGithub className="button-icon" />
-      View Project
-    </a>
-  )}
-  
-  {/* Only show video button if videoLink exists */}
-  {hackathon.videoLink && (
-    <a 
-      href={hackathon.videoLink} 
-      target="_blank" 
-      rel="noopener noreferrer"
-      className="project-button video-button"
-    >
-      <FiYoutube className="button-icon" />
-      Video
-    </a>
-  )}
-</div>
+            <div className="button-group">
+              {hackathon.devpostLink && (
+                <a
+                  href={hackathon.devpostLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="project-button github-button"
+                >
+                  <FiGithub className="button-icon" />
+                  View Project
+                </a>
+              )}
+
+              {/* Only show video button if videoLink exists */}
+              {hackathon.videoLink && (
+                <a
+                  href={hackathon.videoLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="project-button video-button"
+                >
+                  <FiYoutube className="button-icon" />
+                  Video
+                </a>
+              )}
+            </div>
           </div>
         </div>
 
@@ -123,22 +123,36 @@ const HackathonCard = ({ hackathon }) => {
 };
 
 const HackathonSection = () => {
+  const cardsContainerRef = useRef(null);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    const cardsContainer = cardsContainerRef.current;
+
+    const handleScroll = () => {
+      if (!section || !cardsContainer) return;
+
+      const { top, height } = section.getBoundingClientRect();
+      const scrollProgress = Math.max(
+        0,
+        Math.min(1, -top / (height - window.innerHeight))
+      );
+
+      // Smoother translation with easing
+      const translateX =
+        Math.round(scrollProgress * (cardsContainer.offsetWidth - window.innerWidth + 240)) *
+        -1;
+      cardsContainer.style.transform = `translateX(${translateX}px)`;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll(); // Initial position
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const { isDarkMode } = useTheme();
-  const targetRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: targetRef,
-    offset: ["start start", "end end"],
-  });
-
-  const x = useTransform(
-    scrollYProgress,
-    [0, 0.2, 0.5, 0.8, 1],
-    ["0%", "0%", "-100%", "-200%", "-200%"],
-    {
-      ease: easeInOut,
-    }
-  );
-
   const hackathons = [
     {
       title: "Amazon ML Challenge 2024",
@@ -209,20 +223,17 @@ const HackathonSection = () => {
   ];
 
   return (
-    <section className={`hackathon-section ${isDarkMode ? "dark" : ""}`}>
+    <section ref={sectionRef} className="hackathon-scroll" id="hackathons">
       <div className="hackathon-title">
         <h1>✦ HACKATHONS</h1>
       </div>
-      <div
-        className={`hackathon-scroll ${isDarkMode ? "dark" : ""}`}
-        ref={targetRef}
-      >
+      <div className={`hackathon-scroll ${isDarkMode ? "dark" : ""}`}>
         <div className="content-container">
-          <motion.div className="cards-container" style={{ x }}>
+          <div ref={cardsContainerRef} className="cards-container">
             {hackathons.map((hackathon, index) => (
               <HackathonCard key={index} hackathon={hackathon} />
             ))}
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
