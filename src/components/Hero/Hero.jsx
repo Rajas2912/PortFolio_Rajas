@@ -5,7 +5,7 @@ import { Typewriter } from "react-simple-typewriter";
 import { useTheme } from "../../context/ThemeContext";
 import { useState, useEffect } from 'react';
 import resumepdf from './Rajas_Bhosale_CV.pdf';
-import calm from './Calm212bg.png';
+import heroVideo from './v1.mp4';
 import './Hero.css';
 
 // Custom hook for scroll locking
@@ -194,10 +194,13 @@ const Hero = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <div className="portrait-wrapper">
-              <motion.img
-                src={calm}
-                alt="Rajas Portrait"
+              <motion.video
+                src={heroVideo}
                 className="portrait-image"
+                autoPlay
+                loop
+                muted
+                playsInline
               />
             </div>
           </motion.div>
