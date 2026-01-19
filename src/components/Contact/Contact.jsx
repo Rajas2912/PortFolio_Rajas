@@ -1,9 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FaGithub, FaLinkedinIn, FaTwitter, FaInstagram, FaEnvelope, FaMapMarkerAlt, FaPhone, FaArrowRight } from 'react-icons/fa'
+import emailjs from '@emailjs/browser'
 import './Contact.css'
 
 const Contact = () => {
+  const formRef = useRef(null)
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -15,6 +17,11 @@ const Contact = () => {
   const [submitStatus, setSubmitStatus] = useState(null)
   const [focusedField, setFocusedField] = useState(null)
 
+  // Initialize EmailJS
+  useEffect(() => {
+    emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY)
+  }, [])
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -24,19 +31,38 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    setIsSubmitting(true)
     
-    // Simulate form submission
-    setTimeout(() => {
+    if (!formRef.current) return
+
+    setIsSubmitting(true)
+
+    try {
+      const result = await emailjs.sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        formRef.current,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
+
+      console.log('Email sent successfully:', result)
       setSubmitStatus('success')
-      setIsSubmitting(false)
       setFormData({ name: '', email: '', subject: '', message: '' })
       
       // Reset success message after 3 seconds
       setTimeout(() => {
         setSubmitStatus(null)
       }, 3000)
-    }, 1500)
+    } catch (error) {
+      console.error('Failed to send email:', error)
+      setSubmitStatus('error')
+      
+      // Reset error message after 3 seconds
+      setTimeout(() => {
+        setSubmitStatus(null)
+      }, 3000)
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const socialLinks = [
@@ -181,7 +207,7 @@ const Contact = () => {
         >
             <div className="contact-form-container">
               <h3>Send me a message</h3>
-              <form onSubmit={handleSubmit} className="contact-form">
+              <form ref={formRef} onSubmit={handleSubmit} className="contact-form">
                 <div className="form-group">
                   <motion.input
                   type="text"
@@ -251,6 +277,16 @@ const Contact = () => {
                       exit={{ opacity: 0, y: -10 }}
               >
                       Message sent successfully! I'll get back to you soon.
+              </motion.div>
+            )}
+                  {submitStatus === 'error' && (
+              <motion.div
+                      className="error-message"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+              >
+                      Failed to send message. Please try again later.
               </motion.div>
             )}
                 </AnimatePresence>
